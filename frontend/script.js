@@ -37,7 +37,7 @@ async function agregarUsuario(event) {
     const dni = document.getElementById('dni').value;
 
     try {
-        const response = await fetch('https://tpfinal-1.onrender.com/api/users', { // URL completa
+        const response = await fetch('https://tpfinal-1.onrender.com:5000/api/users', { // URL completa
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ async function agregarUsuario(event) {
 async function eliminarUsuario(id) {
     if (confirm('¿Estás seguro de eliminar este usuario?')) {
         try {
-            const response = await fetch(`https://tpfinal-1.onrender.com/api/users/${id}`, { // URL completa
+            const response = await fetch(`https://tpfinal-1.onrender.com:5000/api/users/${id}`, { // URL completa
                 method: 'DELETE',
             });
 
