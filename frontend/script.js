@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function cargarUsuarios() {
     try {
-        const response = await fetch('https://tpfinal-1.onrender.com//api/users'); // URL completa
+        const response = await fetch('https://tpfinal-1.onrender.com/api/users'); // URL completa
         if (!response.ok) {
             throw new Error('Error al cargar usuarios');
         }
