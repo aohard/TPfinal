@@ -8,4 +8,4 @@ COPY migrate.py ./app/migrate.py
 
 RUN pip install -r ./app/requirements.txt
 
-CMD ["sh", "-c", "python ./app/migrate.py && python .app/app.py"]
+CMD ["sh", "-c", "python ./app/migrate.py && python ./app/app.py"]
