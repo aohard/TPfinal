@@ -37,7 +37,7 @@ async function agregarUsuario(event) {
     const dni = document.getElementById('dni').value;
 
     try {
-        const response = await fetch('https://tpfinal-1.onrender.com/api/users', { // URL completa
+        const response = await fetch('https://tpfinal-1.onrender.com:5000/api/users', { // URL completa
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
