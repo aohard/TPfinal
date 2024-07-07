@@ -2,10 +2,10 @@ FROM python:3.9
 
 WORKDIR /app
 
-COPY requirements.txt /app/requirements.txt
-COPY app.py /app/app.py
-COPY migrate.py /app/migrate.py
+COPY requirements.txt ./app/requirements.txt
+COPY app.py ./app/app.py
+COPY migrate.py ./app/migrate.py
 
-RUN pip install -r requirements.txt
+RUN pip install -r ./app/requirements.txt
 
-CMD ["python", "app.py"]
+CMD ["python", "./app/app.py"]
