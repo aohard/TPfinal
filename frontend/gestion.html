@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión</title>
+    <link rel="stylesheet" href="CSS/allStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script  defer src="JS/button.js"></script>
+  </head>
+<body>
+    
+    <header id="top">
+        <a href="/"><img src="IMG/CaC.png" id="logo" alt="logo" /></a>
+        <nav id="navbar">
+          <button id="menu-toggle" aria-label="Open menu">
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul id="pagesNav">
+            <li><a class="link" href="index.html">
+              <i  id="hi" class="fas fa-home"></i>
+              <span>Home</span></a></li>
+            <li><a class="link" href="Sobre-Nosotros.html"><span>Sobre nosotros</span></a></li>
+            <li><a class="link" href="Nuestros_servicios.html"><span>Nuestros servicios</span></a></li>
+            <li><a class="link" href="gestion.html"><span>Gestión</span></a></li>
+          </ul>
+          <button id="menu-close" aria-label="Close menu" style="display: none;">
+            <i class="fas fa-times"></i>
+          </button>
+        </nav>
+      </header>
+      <div class="container mt-4">
+        <h1>Gestión de Usuarios</h1>
+        <form id="formUsuario">
+          <div class="form-group">
+            <label for="nombres">Nombres</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" class="form-control" id="apellido" name="apellido" required>
+          </div>
+          <div class="form-group">
+            <label for="dni">DNI</label>
+            <input type="text" class="form-control" id="dni" name="dni" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Agregar Usuario</button>
+        </form>
+    
+        <hr>
+    
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>DNI</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaUsuarios">
+          </tbody>
+        </table>
+      </div>
+    
+      <script src="script.js"></script>     
+      <footer>
+        <div id="botonera"><a href="#Top">↑ Top ↑</a></div>
+        <div id="integrantes">
+          <h4>Creado por:</h4>
+          <ul>
+            <li><a href="https://www.linkedin.com/in/jonballes/">Jonatan Ballestero</a></li>
+            <li><a href="https://www.linkedin.com/in/walter-cepeda-3716811ba/">Walter Cepeda</a></li>
+            <li><a href="https://www.linkedin.com/in/alvarez-neve-belen/">Belen Neve</a></li>
+            <li><a href="">Jorge Cruz</a></li>
+          </ul>
+        </div>
+          <div>
+          <p>Proyecto Integrador</p>
+          <small>Pagina no comercial - Proyecto de CaC FullStack Phyton</small>
+          </div>
+        </footer>
+</body>
+</html>

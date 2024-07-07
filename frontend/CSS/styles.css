@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    /*Paleta de colores: https://www.colorhunt.co/palette/f5dad2fcffe0bacd9275a47f */
+    --verde: #75A47F;
+    --secundario: #BACD92;
+    --fondo: #FCFFE0;
+    --otro: #F5DAD2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+    font-weight: 300;  
+}
+
+main{
+    height:auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+}

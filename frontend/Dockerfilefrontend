@@ -1,0 +1,35 @@
+FROM nginx:alpine
+
+COPY gestion.html /usr/share/nginx/html/gestion.html
+COPY index.html /usr/share/nginx/html/index.html
+COPY Nuestros_servicios.html /usr/share/nginx/html/Nuestros_servicios.html
+COPY Sobre-Nosotros.html /usr/share/nginx/html/Sobre-Nosotros.html
+COPY script.js /usr/share/nginx/html/script.js
+
+COPY CSS/allStyles.css /usr/share/nginx/html/CSS/allStyles.css
+COPY CSS/footer.css /usr/share/nginx/html/CSS/footer.css
+COPY CSS/formulario.css /usr/share/nginx/html/CSS/formulario.css
+COPY CSS/header.css /usr/share/nginx/html/CSS/header.css
+COPY CSS/home.css /usr/share/nginx/html/CSS/home.css
+COPY CSS/Nuestros_Servicios.css /usr/share/nginx/html/CSS/Nuestros_Servicios.css
+COPY CSS/sobre_nosotros.css /usr/share/nginx/html/CSS/sobre_nosotros.css
+COPY CSS/styles.css /usr/share/nginx/html/CSS/styles.css
+
+COPY JS/banner.js /usr/share/nginx/html/JS/banner.js
+COPY JS/button.js /usr/share/nginx/html/JS/button.js
+COPY JS/formulario.js /usr/share/nginx/html/JS/formulario.js
+
+COPY JS/texto.js /usr/share/nginx/html/JS/texto.js
+
+COPY IMG/1(0).jpg /usr/share/nginx/html/IMG/1(0).jpg
+COPY IMG/1(1).jpg /usr/share/nginx/html/IMG/1(1).jpg
+COPY IMG/1(2).jpg /usr/share/nginx/html/IMG/1(2).jpg
+COPY IMG/CaC.png /usr/share/nginx/html/IMG/CaC.png
+COPY IMG/logos--whatsapp-icon.png /usr/share/nginx/html/IMG/logos--whatsapp-icon.png
+COPY IMG/varon1team.jpg /usr/share/nginx/html/IMG/varon1team.jpg
+COPY IMG/varon2team.jpg /usr/share/nginx/html/IMG/varon2team.jpg
+COPY IMG/varon3team.jpg /usr/share/nginx/html/IMG/varon3team.jpg
+COPY IMG/mujer4team.jpg /usr/share/nginx/html/IMG/mujer4team.jpg
+COPY IMG/equipo.jpg /usr/share/nginx/html/IMG/equipo.jpg
+
+EXPOSE 80
