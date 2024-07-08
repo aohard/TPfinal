@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function cargarUsuarios() {
     try {
-        const response = await fetch('https://backend-t4xr.onrender.com:5000/api/users'); // URL completa
+        const response = await fetch('http://localhost:5000/api/users'); // URL completa
         if (!response.ok) {
             throw new Error('Error al cargar usuarios');
         }
@@ -37,7 +37,7 @@ async function agregarUsuario(event) {
     const dni = document.getElementById('dni').value;
 
     try {
-        const response = await fetch('https://backend-t4xr.onrender.com:5000/api/users', { // URL completa
+        const response = await fetch('http://localhost:5000/api/users', { // URL completa
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -58,20 +58,26 @@ async function agregarUsuario(event) {
 }
 
 async function eliminarUsuario(id) {
-    if (confirm('¿Estás seguro de eliminar este usuario?')) {
-        try {
-            const response = await fetch(`https://backend-t4xr.onrender.com:5000/api/users/${id}`, { // URL completa
-                method: 'DELETE',
-            });
-
-            if (!response.ok) {
-                throw new Error('Error al eliminar usuario');
+    try {
+        const response = await fetch(`http://localhost:5000/api/users/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
             }
+        });
 
-            cargarUsuarios();
-        } catch (error) {
-            console.error('Error:', error);
-            alert('Error al eliminar usuario');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
+
+        const data = await response.json();
+        console.log('Usuario eliminado:', data);
+        // Actualiza la interfaz de usuario según sea necesario
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error al eliminar usuario');
     }
 }
+
+document.getElementById('deleteButton').addEventListener('click', () => eliminarUsuario(1));
+

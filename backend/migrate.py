@@ -1,6 +1,10 @@
 from app import db
 
-# Crear todas las tablas
-db.create_all()
-
-print("Tablas creadas correctamente")
+db.engine.execute('''
+    CREATE TABLE IF NOT EXISTS users (
+        id SERIAL PRIMARY KEY,
+        nombre VARCHAR(80) NOT NULL,
+        apellido VARCHAR(80) NOT NULL,
+        dni VARCHAR(20) NOT NULL
+    );
+''')
