@@ -1,12 +1,25 @@
-FROM python:3.9
+FROM python:3.10
 
+# Instalar dependencias del sistema necesarias para MariaDB (compatible con MySQL)
+RUN apt-get update && apt-get install -y \
+    libmariadb-dev-compat \
+    libmariadb-dev \
+    build-essential
+
+# Establecer el directorio de trabajo
 WORKDIR /app
 
+# Copiar los archivos de requisitos y el código de la aplicación
 COPY requirements.txt requirements.txt
 COPY app.py app.py
 COPY migrate.py migrate.py
+
+# Instalar las dependencias de Python
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
+# Exponer el puerto para la aplicación
 EXPOSE 5000
 
-CMD ["python", "app.py"]
+# Ejecutar el script de migración y luego iniciar la aplicación con Gunicorn
+CMD ["sh", "-c", "python migrate.py && gunicorn --bind 0.0.0.0:$PORT app:app"]
