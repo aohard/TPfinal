@@ -10,14 +10,16 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Copiar los archivos de requisitos y el código de la aplicación
-COPY requirements.txt /app/
+COPY requirements.txt requirements.txt
+COPY app.py app.py
+COPY migrate.py migrate.py
+
+# Instalar las dependencias de Python
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
-
-COPY . /app
 
 # Exponer el puerto para la aplicación
 EXPOSE 5000
 
-# Ejecutar la aplicación con Gunicorn, leyendo el puerto de la variable de entorno
-CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "app:app"]
+# Ejecutar el script de migración y luego iniciar la aplicación con Gunicorn
+CMD ["sh", "-c", "python migrate.py && gunicorn --bind 0.0.0.0:$PORT app:app"]
