@@ -2,6 +2,7 @@ FROM nginx:alpine
 
 # Copiar archivos HTML
 COPY *.html /usr/share/nginx/html/
+COPY *.js /usr/share/nginx/html/
 
 # Copiar archivos CSS
 COPY CSS/*.css /usr/share/nginx/html/CSS/
